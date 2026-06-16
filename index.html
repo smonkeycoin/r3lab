@@ -6,7 +6,7 @@
 <title>NeumoPractice IA Clínica Stable Sidebar</title>
 <link rel="icon" href="assets/favicon.ico">
 <link rel="apple-touch-icon" href="assets/app-icon.png">
-<meta name="theme-color" content="#2563EB">
+<meta name="theme-color" content="#0F172A">
 <style>
 :root{
   --bg:#f5f7fb;
@@ -15,23 +15,23 @@
   --text:#1d1d1f;
   --muted:#6b7280;
   --line:#e5e7eb;
-  --clinic-primary:#2563EB;
-  --clinic-secondary:#60A5FA;
-  --clinic-primary-soft:#EFF6FF;
-  --clinic-primary-shadow:rgba(37,99,235,.24);
-  --blue:#2563eb;
-  --blue2:#1d4ed8;
+  --clinic-primary:#0F172A;
+  --clinic-secondary:#06B6D4;
+  --clinic-primary-soft:#E6F8FC;
+  --clinic-primary-shadow:rgba(6,182,212,.18);
+  --blue:#06B6D4;
+  --blue2:#7C3AED;
   --green:#16a34a;
   --orange:#f59e0b;
   --red:#dc2626;
   --purple:#7c3aed;
-  --shadow:0 20px 50px rgba(15,23,42,.08);
+  --shadow:0 22px 54px rgba(15,23,42,.10);
   --radius:18px;
 }
 *{box-sizing:border-box}
 body{
   margin:0;
-  background:linear-gradient(180deg,#f8fbff 0%,#eef3f9 100%);
+  background:linear-gradient(180deg,#f8fbff 0%,#ecf2ff 100%);
   color:var(--text);
   font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Arial,sans-serif;
 }
@@ -39,9 +39,9 @@ body{
 .sidebar{
   width:280px;
   padding:22px;
-  background:rgba(255,255,255,.82);
+  background:linear-gradient(180deg,#0F172A 0%, #0B2245 42%, #7C3AED 100%);
   backdrop-filter:blur(18px);
-  border-right:1px solid var(--line);
+  border-right:1px solid rgba(255,255,255,.16);
   position:sticky;top:0;height:100vh;
 }
 .brand{
@@ -50,9 +50,11 @@ body{
 .logo{
   width:44px;height:44px;border-radius:14px;
   display:grid;place-items:center;
-  background:linear-gradient(135deg,#dbeafe,#eff6ff);
-  box-shadow:inset 0 0 0 1px #bfdbfe;
-  font-size:24px;
+  background:linear-gradient(135deg,#06B6D4,#7C3AED);
+  color:#08111F;
+  box-shadow:0 10px 28px rgba(6,182,212,.35);
+  font-size:22px;
+  font-weight:900;
 }
 .brand h1{font-size:15px;margin:0;line-height:1.25;}
 .brand p{font-size:12px;color:var(--muted);margin:3px 0 0;}
@@ -62,7 +64,7 @@ body{
   cursor:pointer;font-weight:600;margin-bottom:7px;font-size:14px;
   display:flex;gap:10px;align-items:center;
 }
-.nav button:hover,.nav button.active{background:#eef4ff;color:var(--blue);}
+.nav button:hover,.nav button.active{background:rgba(255,255,255,.14);color:#fff;}
 .sidebar-footer{position:absolute;bottom:22px;left:22px;right:22px;font-size:11px;color:var(--muted);line-height:1.45;}
 .main{flex:1;padding:28px 34px 60px;}
 .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px;gap:20px;}
@@ -75,11 +77,14 @@ h2{margin:5px 0 4px;font-size:29px;letter-spacing:-.03em;}
 .stat span{font-size:12px;color:var(--muted);}
 .card{
   background:var(--panel);
-  border:1px solid var(--line);
+  border:1px solid rgba(148,163,184,.24);
   border-radius:var(--radius);
-  box-shadow:var(--shadow);
+  box-shadow:0 16px 40px rgba(15,23,42,.08),0 0 0 1px rgba(148,163,184,.16);
   padding:20px;
   margin-bottom:18px;
+}
+.card:hover{
+  box-shadow:0 18px 48px rgba(6,182,212,.12),0 0 0 1px rgba(124,58,237,.12);
 }
 .card h3{margin:0 0 14px;font-size:19px;letter-spacing:-.02em;}
 .section-title{
@@ -94,7 +99,7 @@ input,textarea,select{
   padding:11px 12px;font:inherit;color:var(--text);outline:none;
 }
 textarea{min-height:92px;resize:vertical;}
-input:focus,textarea:focus,select:focus{border-color:#93c5fd;box-shadow:0 0 0 4px rgba(37,99,235,.10);}
+input:focus,textarea:focus,select:focus{border-color:#06B6D4;box-shadow:0 0 0 4px rgba(6,182,212,.10);}
 .checkbox-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
 .check{
   display:flex;align-items:center;gap:8px;background:var(--panel2);
@@ -112,14 +117,15 @@ input:focus,textarea:focus,select:focus{border-color:#93c5fd;box-shadow:0 0 0 4p
 .patient-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
 .patient-card{
   background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;cursor:pointer;
+  box-shadow:0 16px 30px rgba(6,182,212,.10),0 0 0 1px rgba(124,58,237,.15);
 }
-.patient-card:hover{border-color:#93c5fd;box-shadow:0 12px 35px rgba(37,99,235,.10);}
+.patient-card:hover{border-color:#06b6d4;box-shadow:0 18px 38px rgba(6,182,212,.18),0 0 0 1px rgba(124,58,237,.18);}
 .patient-card b{font-size:16px}.pill{display:inline-flex;border-radius:99px;background:#eef4ff;color:var(--blue);padding:4px 9px;font-size:11px;font-weight:800;margin-top:8px;}
 .med-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;}
 .med-card{
   border:1px solid var(--line);background:#fff;border-radius:16px;padding:13px;cursor:pointer;min-height:115px;
 }
-.med-card:hover{border-color:#93c5fd;background:#f8fbff;}
+.med-card:hover{border-color:#06b6d4;background:#f5fdff;box-shadow:0 16px 30px rgba(6,182,212,.16),0 0 0 1px rgba(124,58,237,.16);}
 .med-card b{display:block;font-size:14px;margin-bottom:4px;}
 .med-card span{font-size:11px;color:var(--muted);display:block;line-height:1.35;}
 .category-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px;}
@@ -143,8 +149,8 @@ input:focus,textarea:focus,select:focus{border-color:#93c5fd;box-shadow:0 0 0 4p
 .rx-v2-device-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px;}
 .rx-v2-device-actions a{text-decoration:none;}
 .rx-v2-pending{font-size:11px;font-weight:800;color:#64748b;background:#f1f5f9;border-radius:999px;padding:5px 8px;}
-.google-login-btn{width:100%;min-height:56px;border:1px solid #1D4ED8;background:#2563EB;color:#fff;border-radius:14px;padding:12px 16px;font-weight:950;cursor:pointer;box-shadow:0 18px 38px rgba(37,99,235,.24);margin:14px 0 8px;display:flex;align-items:center;justify-content:center;gap:12px;text-align:left;}
-.google-login-btn:hover{border-color:#1E40AF;background:#1D4ED8;box-shadow:0 22px 46px rgba(37,99,235,.30);}
+.google-login-btn{width:100%;min-height:56px;border:1px solid var(--clinic-primary);background:var(--clinic-primary);color:#fff;border-radius:14px;padding:12px 16px;font-weight:950;cursor:pointer;box-shadow:0 18px 38px rgba(6,182,212,.24);margin:14px 0 8px;display:flex;align-items:center;justify-content:center;gap:12px;text-align:left;}
+.google-login-btn:hover{border-color:var(--clinic-secondary);background:var(--clinic-secondary);box-shadow:0 22px 46px rgba(124,58,237,.30);}
 .google-login-btn .np-google-logo-v80{width:28px;height:28px;border-radius:999px;background:#fff;display:grid;place-items:center;flex:0 0 auto;box-shadow:0 1px 3px rgba(15,23,42,.12)}
 .google-login-btn .np-google-logo-v80 svg{width:18px;height:18px;display:block}
 .google-login-btn .np-google-copy-v80{display:grid;gap:2px;line-height:1.12}
@@ -520,11 +526,11 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
 
 /* NeumoPractice Dashboard Module Imagotypes V2.6.1 */
 .np-hero{
-  background:linear-gradient(135deg,#ffffff 0%,#eff6ff 100%);
+  background:linear-gradient(135deg,#ffffff 0%,#f0fbff 38%,rgba(124,58,237,.08) 100%);
   border:1px solid #dbeafe;
   border-radius:26px;
   padding:26px;
-  box-shadow:0 24px 60px rgba(37,99,235,.10);
+  box-shadow:0 24px 60px rgba(15,23,42,.12),0 0 0 1px rgba(124,58,237,.15);
   margin-bottom:18px;
   position:relative;
   overflow:hidden;
@@ -536,7 +542,7 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
   top:-80px;
   width:240px;
   height:240px;
-  background:radial-gradient(circle,rgba(96,165,250,.22),rgba(96,165,250,0) 70%);
+  background:radial-gradient(circle,rgba(6,182,212,.24),rgba(6,182,212,0) 70%);
 }
 .np-hero-logo{
   display:flex;
@@ -548,11 +554,11 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
   width:62px;
   height:62px;
   border-radius:20px;
-  background:linear-gradient(135deg,#DBEAFE,#60A5FA);
+  background:linear-gradient(135deg,var(--clinic-primary),var(--clinic-secondary));
   display:grid;
   place-items:center;
   font-size:34px;
-  box-shadow:inset 0 0 0 1px #bfdbfe,0 16px 30px rgba(37,99,235,.18);
+  box-shadow:inset 0 0 0 1px rgba(147,197,253,.30),0 16px 30px rgba(6,182,212,.18);
 }
 .np-wordmark{
   font-size:32px;
@@ -560,7 +566,7 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
   font-weight:950;
   letter-spacing:-.045em;
 }
-.np-wordmark span:last-child{color:#2563EB}
+.np-wordmark span:last-child{color:#7C3AED}
 .np-tagline{
   color:#64748b;
   font-size:15px;
@@ -586,19 +592,19 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
 }
 .module-card{
   background:#fff;
-  border:1px solid #e5e7eb;
+  border:1px solid rgba(148,163,184,.30);
   border-radius:22px;
   padding:16px 12px;
   min-height:154px;
   text-align:center;
   cursor:pointer;
   transition:.16s ease;
-  box-shadow:0 16px 40px rgba(15,23,42,.06);
+  box-shadow:0 16px 38px rgba(15,23,42,.05),0 0 0 1px rgba(6,182,212,.12);
 }
 .module-card:hover{
   transform:translateY(-2px);
-  border-color:#93c5fd;
-  box-shadow:0 20px 45px rgba(37,99,235,.14);
+  border-color:#06b6d4;
+  box-shadow:0 20px 42px rgba(6,182,212,.18),0 0 0 1px rgba(124,58,237,.22);
 }
 .module-icon{
   width:58px;
@@ -609,11 +615,12 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
   place-items:center;
   background:#eff6ff;
   border:1px solid #dbeafe;
+  box-shadow:inset 0 0 0 1px rgba(147,197,253,.18),0 12px 20px rgba(6,182,212,.12);
 }
 .module-icon svg{
   width:36px;
   height:36px;
-  stroke:#2563EB;
+  stroke:#0F172A;
   stroke-width:2.2;
   fill:none;
   stroke-linecap:round;
@@ -675,13 +682,15 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
   border-radius:14px;
   display:grid;
   place-items:center;
-  background:linear-gradient(135deg,#DBEAFE,#60A5FA);
-  box-shadow:inset 0 0 0 1px #bfdbfe,0 10px 22px rgba(37,99,235,.16);
+  background:linear-gradient(135deg,#06B6D4,#7C3AED);
+  box-shadow:0 12px 28px rgba(6,182,212,.30),inset 0 0 0 1px rgba(147,197,253,.24);
+  color:#08111F;
+  font-weight:900;
 }
 .np-brand-logo svg{
   width:31px;
   height:31px;
-  stroke:#2563EB;
+  stroke:#06B6D4;
   stroke-width:2.35;
   fill:none;
   stroke-linecap:round;
@@ -697,13 +706,13 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
   border-radius:9px;
   display:grid;
   place-items:center;
-  background:#eff6ff;
-  border:1px solid #dbeafe;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
 }
 .nav-icon svg{
   width:17px;
   height:17px;
-  stroke:#2563EB;
+  stroke:#06B6D4;
   stroke-width:2.3;
   fill:none;
   stroke-linecap:round;
@@ -711,28 +720,28 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
 }
 .nav button.active .nav-icon,
 .nav button:hover .nav-icon{
-  background:#2563EB;
-  border-color:#2563EB;
+  background:linear-gradient(135deg,#06B6D4,#7C3AED);
+  border-color:#06B6D4;
 }
 .nav button.active .nav-icon svg,
 .nav button:hover .nav-icon svg{
   stroke:#fff;
 }
 .np-wordmark span:first-child{color:#111827}
-.np-wordmark span:last-child{color:#2563EB}
+.np-wordmark span:last-child{color:#7C3AED}
 .np-official-hero-icon{
   width:70px;
   height:70px;
   border-radius:22px;
-  background:linear-gradient(135deg,#DBEAFE,#60A5FA);
+  background:linear-gradient(135deg,#06B6D4,#7C3AED);
   display:grid;
   place-items:center;
-  box-shadow:inset 0 0 0 1px #bfdbfe,0 16px 30px rgba(37,99,235,.18);
+  box-shadow:inset 0 0 0 1px rgba(147,197,253,.26),0 16px 30px rgba(6,182,212,.20);
 }
 .np-official-hero-icon svg{
   width:48px;
   height:48px;
-  stroke:#2563EB;
+  stroke:#ffffff;
   stroke-width:2.15;
   fill:none;
   stroke-linecap:round;
@@ -954,28 +963,33 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
 .np-brand-logo,
 .np-official-hero-icon,
 .module-icon{
-  background:#fff!important;
-  border:1.5px solid #dbeafe!important;
-  box-shadow:0 10px 28px rgba(37,99,235,.09)!important;
+  background:linear-gradient(135deg,var(--clinic-primary),var(--clinic-secondary))!important;
+  border:1.5px solid #c4b5fd!important;
+  box-shadow:0 10px 28px rgba(6,182,212,.12)!important;
+}
+.np-brand-logo,
+.np-official-hero-icon,
+.module-icon{
+  color:#fff!important;
 }
 .np-brand-logo svg,
 .np-official-hero-icon svg,
 .module-icon svg{
-  stroke:#2563EB!important;
+  stroke:#fff!important;
 }
 .module-card.rx .module-icon svg{stroke:#22C55E!important}
 .module-card.imaging .module-icon svg{stroke:#7c3aed!important}
 .module-card.finance .module-icon svg{stroke:#F59E0B!important}
 .module-card.ai .module-icon svg{stroke:#111827!important}
 .np-hero{
-  background:linear-gradient(135deg,#ffffff 0%,#F8FAFC 55%,#EFF6FF 100%)!important;
+  background:linear-gradient(135deg,#ffffff 0%,#f0fbff 55%,rgba(124,58,237,.08) 100%)!important;
 }
 .sidebar .brand h1{
   font-size:17px!important;
   letter-spacing:-.03em;
 }
 .kicker{
-  color:#2563EB!important;
+  color:#06B6D4!important;
 }
 
 
@@ -1060,44 +1074,54 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
 .brand .np-brand-logo,
 .brand .logo{
   background:#fff!important;
-  border:1.5px solid #DBEAFE!important;
-  box-shadow:0 12px 30px rgba(37,99,235,.10)!important;
+  border:1.5px solid #c4b5fd!important;
+  box-shadow:0 12px 30px rgba(6,182,212,.10)!important;
 }
 .nav-icon{
-  background:#EFF6FF!important;
-  border:1px solid #DBEAFE!important;
+  background:rgba(255,255,255,.10)!important;
+  border:1px solid rgba(255,255,255,.18)!important;
 }
 .nav-icon svg,
 .module-icon svg{
   stroke-width:2.1!important;
+  stroke:#ffffff!important;
 }
 
 /* Branding V5.0: assets oficiales + avatares por iniciales */
 .brand .np-logo-asset,
 .np-logo-asset{
-  background:#2563EB url("assets/app-icon.png") center/cover no-repeat!important;
-  border:1.5px solid rgba(255,255,255,.72)!important;
-  box-shadow:0 12px 30px rgba(37,99,235,.24)!important;
+  background:#0F172A url("assets/app-icon.png") center/cover no-repeat!important;
+  border:1.5px solid rgba(147,197,253,.35)!important;
+  box-shadow:0 12px 30px rgba(6,182,212,.22)!important;
 }
 .np-logo-asset svg{
+  display:none!important;
+}
+.np-logo-asset span{
+  color:#ffffff;
+  font-size:18px;
+  font-weight:900;
+  text-shadow:0 1px 2px rgba(15,23,42,.38);
+}
+.np-logo-asset.has-clinic-logo-v81 span{
   display:none!important;
 }
 .np-hero-logo-asset{
   width:76px;
   height:76px;
   border-radius:22px;
-  background:#2563EB url("assets/app-icon.png") center/cover no-repeat!important;
-  border:1.5px solid rgba(255,255,255,.9)!important;
-  box-shadow:0 16px 38px rgba(37,99,235,.22)!important;
+  background:#0F172A url("assets/app-icon.png") center/cover no-repeat!important;
+  border:1.5px solid rgba(167,139,250,.8)!important;
+  box-shadow:0 16px 38px rgba(6,182,212,.20)!important;
   flex:0 0 auto;
 }
 .login-logo-asset{
   width:54px;
   height:54px;
   border-radius:16px;
-  background:#2563EB url("assets/app-icon.png") center/cover no-repeat!important;
-  border:1.5px solid rgba(255,255,255,.9);
-  box-shadow:0 12px 30px rgba(37,99,235,.22);
+  background:#0F172A url("assets/app-icon.png") center/cover no-repeat!important;
+  border:1.5px solid rgba(167,139,250,.8);
+  box-shadow:0 12px 30px rgba(6,182,212,.20);
   flex:0 0 auto;
 }
 .np-user-avatar{
@@ -1731,10 +1755,10 @@ hr{border:none;border-top:1px solid var(--line);margin:18px 0;}
 <div class="app-shell">
   <aside class="sidebar no-print">
     <div class="brand">
-      <div class="np-brand-logo np-logo-asset" aria-label="NeumoPractice"></div>
+      <div class="np-brand-logo np-logo-asset" aria-label="R³ LAB">R³</div>
       <div>
-        <h1><span style="color:#111827">Neumo</span><span style="color:#2563EB">Practice</span></h1>
-        <p>Menos captura. Más medicina.</p>
+        <h1>R³ LAB</h1>
+        <p>Clinical Intelligence Studio</p>
       </div>
     </div>
     <nav class="nav">
@@ -1775,8 +1799,8 @@ const SPECIALTY_CONFIG = {
     firstVisitLabel: "Primera consulta pediátrica",
     followUpLabel: "Seguimiento pediátrico",
     homeKicker: "NeumoPractice · Neumología pediátrica",
-    homeHeroTitle: "El primer asistente clínico para neumología pediátrica impulsado por IA.",
-    homeHeroSubtitle: "Agenda, pacientes, expediente clínico, RX, estudios de gabinete, finanzas e IA clínica en una sola plataforma moderna para reducir captura y mejorar el flujo de consulta.",
+    homeHeroTitle: "Menos captura. Más medicina.",
+    homeHeroSubtitle: "La base tecnológica para construir software clínico especializado.",
     firstVisitSubtitle: "Formulario clínico respiratorio pediátrico más completo para crear expediente y dejar historial.",
     clinicLine: "Neumología Pediátrica",
     profileSpecialtyPlaceholder: "Neumología pediátrica",
@@ -1793,8 +1817,8 @@ const SPECIALTY_CONFIG = {
     firstVisitLabel: "Primera consulta neumológica",
     followUpLabel: "Evolución neumológica",
     homeKicker: "Neumología clínica inteligente",
-    homeHeroTitle: "Menos captura. Más consulta.",
-    homeHeroSubtitle: "Agenda, expediente, recetas, estudios, seguimiento e IA clínica para neumología de adultos.",
+    homeHeroTitle: "Menos captura. Más medicina.",
+    homeHeroSubtitle: "La base tecnológica para construir software clínico especializado.",
     firstVisitSubtitle: "Historia clínica respiratoria, antecedentes, exploración, estudios y plan en un solo flujo.",
     clinicLine: "Neumología de Adultos",
     profileSpecialtyPlaceholder: "Ej. Neumología de Adultos",
@@ -2104,8 +2128,8 @@ function renderBrandShell(){
   const brandLogo = document.querySelector(".brand .logo, .brand .np-brand-logo");
   if(brandLogo){
     brandLogo.className = "np-brand-logo np-logo-asset";
-    brandLogo.innerHTML = "";
-    brandLogo.setAttribute("aria-label","NeumoPractice");
+    brandLogo.innerHTML = "<span>R³</span>";
+    brandLogo.setAttribute("aria-label","R³ LAB");
   }
   const navMap = [
     ["nav-home","dashboard","Dashboard"],
@@ -2315,12 +2339,12 @@ function npHeroHtml(){
     <div class="np-hero-logo">
       <div class="np-official-hero-icon np-hero-logo-asset" aria-label="NeumoPractice"></div>
       <div>
-        <div class="np-wordmark"><span>Neumo</span><span>Practice</span></div>
-        <div class="np-tagline">Menos captura. Más medicina.</div>
+      <div class="np-wordmark"><span>R³</span><span>LAB</span></div>
+        <div class="np-tagline">La base tecnológica para construir software clínico especializado.</div>
       </div>
     </div>
-    <h3>${specialtyText("homeHeroTitle", "El primer asistente clínico para neumología pediátrica impulsado por IA.")}</h3>
-    <p>${specialtyText("homeHeroSubtitle", "Agenda, pacientes, expediente clínico, RX, estudios de gabinete, finanzas e IA clínica en una sola plataforma moderna para reducir captura y mejorar el flujo de consulta.")}</p>
+    <h3>${specialtyText("homeHeroTitle", "Menos captura. Más medicina.")}</h3>
+    <p>${specialtyText("homeHeroSubtitle", "La base tecnológica para construir software clínico especializado.")}</p>
   </div>`;
 }
 
@@ -16161,7 +16185,7 @@ body[data-theme="dark"] .np-voice-subcard-v56,body[data-theme="dark"] .np-voice-
 
 <style id="np-sidebar-blue-patch">
 .sidebar{
-  background:linear-gradient(180deg,#0F172A 0%,#172554 45%,#1E3A8A 100%) !important;
+  background:linear-gradient(180deg,#0F172A 0%,#172554 42%,#7C3AED 100%) !important;
   color:#fff !important;
   border-right:1px solid rgba(255,255,255,.08)!important;
 }
@@ -16173,7 +16197,7 @@ body[data-theme="dark"] .np-voice-subcard-v56,body[data-theme="dark"] .np-voice-
   color:#fff!important;
 }
 .nav button.active{
-  background:linear-gradient(135deg,#2563EB,#3B82F6)!important;
+  background:linear-gradient(135deg,#06B6D4,#7C3AED)!important;
   color:#fff!important;
 }
 .nav-icon{
@@ -16201,10 +16225,10 @@ body[data-theme="dark"] .np-voice-subcard-v56,body[data-theme="dark"] .np-voice-
 
 <style id="np-clinic-branding-v81-style">
 :root{
-  --clinic-primary:#2563EB;
-  --clinic-secondary:#60A5FA;
-  --clinic-primary-soft:#EFF6FF;
-  --clinic-primary-shadow:rgba(37,99,235,.24);
+  --clinic-primary:#06B6D4;
+  --clinic-secondary:#7C3AED;
+  --clinic-primary-soft:#E0F7FA;
+  --clinic-primary-shadow:rgba(6,182,212,.22);
 }
 .sidebar{
   background:linear-gradient(180deg,#0F172A 0%,#172554 42%,var(--clinic-primary) 100%)!important;
@@ -16226,15 +16250,15 @@ body[data-theme="dark"] .np-voice-subcard-v56,body[data-theme="dark"] .np-voice-
   border-color:var(--clinic-secondary)!important;
 }
 .kicker,.pill,.np-wordmark span:last-child,.patient-timeline-icon,.np-v34-rx-brand span{
-  color:var(--clinic-primary)!important;
+  color:#06B6D4!important;
 }
 input:focus,textarea:focus,select:focus{
   border-color:var(--clinic-secondary)!important;
   box-shadow:0 0 0 4px var(--clinic-primary-shadow)!important;
 }
 .patient-card:hover,.med-card:hover,.module-card:hover{
-  border-color:var(--clinic-secondary)!important;
-  box-shadow:0 14px 34px var(--clinic-primary-shadow)!important;
+  border-color:#7C3AED!important;
+  box-shadow:0 14px 34px rgba(6,182,212,.22)!important;
 }
 .np-logo-asset,.login-logo-asset,.np-hero-logo-asset{
   background-color:var(--clinic-primary)!important;
@@ -16262,9 +16286,9 @@ input:focus,textarea:focus,select:focus{
 /* NeumoPractice V8.1 - Branding visual por organización desde organization_settings. */
 (function(){
   const FALLBACK = {
-    primary:"#2563EB",
-    secondary:"#60A5FA",
-    name:"NeumoPractice",
+  primary:"#06B6D4",
+  secondary:"#7C3AED",
+  name:"R³ LAB",
     loginName:"Clínica Respiratoria Pediátrica",
     tagline:"Menos captura. Más medicina.",
     logo:""
@@ -16343,8 +16367,11 @@ input:focus,textarea:focus,select:focus{
       el.dataset.clinicBranded = name ? "1" : "0";
       el.textContent = name || FALLBACK.loginName;
     });
-    document.querySelectorAll(".brand p,.np-tagline").forEach(el=>{
-      el.textContent = FALLBACK.tagline;
+    document.querySelectorAll(".brand p").forEach(el=>{
+      el.textContent = "Clinical Intelligence Studio";
+    });
+    document.querySelectorAll(".np-tagline").forEach(el=>{
+      el.textContent = "La base tecnológica para construir software clínico especializado.";
     });
       const screenTitle = document.getElementById("screenTitle");
       if(screenTitle && /Dashboard NeumoPractice/i.test(screenTitle.textContent || "") && name){
