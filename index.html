@@ -33,6 +33,12 @@
     }
 
     *{box-sizing:border-box}
+    *, *::before, *::after {box-sizing:border-box}
+    html, body{
+      width:100%;
+      max-width:100%;
+      overflow-x:hidden;
+    }
     html{scroll-behavior:smooth}
     body{
       margin:0;
@@ -479,6 +485,88 @@
       .hero-copy{max-width:100%;}
       .wrap{width:min(1180px, calc(100% - 28px));}
     }
+    @media (max-width:768px){
+      .nav{
+        width:100%;
+      }
+      .nav-inner{
+        width:100%;
+        gap:10px;
+        min-width:0;
+      }
+      .brand{
+        min-width:0;
+        max-width:52%;
+      }
+      .nav-links{
+        flex-wrap:nowrap;
+        gap:8px;
+        min-width:0;
+      }
+      .lang-switch{
+        margin-left:0;
+        flex-wrap:nowrap;
+      }
+      .lang-btn{
+        padding:7px 10px;
+      }
+      .pill{
+        white-space:nowrap;
+        padding:9px 11px;
+      }
+      .hero{
+        grid-template-columns:1fr;
+        gap:28px;
+        width:100%;
+        max-width:100%;
+        min-width:0;
+      }
+      .hero-inner,
+      .hero-grid,
+      .hero-content{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+        padding-inline:16px;
+        overflow:visible;
+      }
+      .hero-visual,
+      .system-card,
+      .lab-card,
+      .mockup,
+      .browser-card{
+        width:min(100%, calc(100vw - 32px));
+        max-width:100%;
+        margin-inline:auto;
+        transform:none !important;
+        left:auto !important;
+        right:auto !important;
+      }
+      .hero-card{
+        padding:16px;
+      }
+      .screen,
+      .hero-visual .screen{
+        width:min(100%, calc(100vw - 32px));
+        max-width:100%;
+        min-width:0;
+      }
+      .hero-actions{
+        width:100%;
+        max-width:100%;
+      }
+      .mini{
+        min-width:0;
+      }
+      .hero-title,
+      .hero p,
+      .hero-copy{
+        width:100%;
+        max-width:100%;
+        min-width:0;
+      }
+      .wrap{width:min(1180px, calc(100% - 32px));}
+    }
     @media (max-width:640px){
       .hero{padding:30px 0 52px;}
       .lang-es .hero-title{font-size:clamp(2.9rem, 11.2vw, 4.6rem)}
@@ -499,6 +587,15 @@
       .hero p{font-size:clamp(.94rem, 4.3vw, 1.02rem);}
       .lang-btn{padding:7px 10px; font-size:.78rem;}
       .screen{min-height:390px}
+    }
+    @media (max-width:520px){
+      .grid-mini{
+        grid-template-columns:1fr;
+        gap:14px;
+      }
+      .grid-mini .mini{
+        min-width:0;
+      }
     }
   </style>
 </head>
@@ -544,7 +641,7 @@
 
   <main>
     <header class="wrap hero">
-      <div>
+      <div class="hero-content hero-inner">
         <div class="eyebrow"><span class="pulse"></span> <span data-i18n="hero_eyebrow">Clinical Intelligence Studio</span></div>
         <h1 class="hero-title" data-i18n="hero_title" data-i18n-html="true">Construyendo el<br><span class="grad">sistema operativo clínico</span><br>moderno.</h1>
         <p class="hero-copy" data-i18n="hero_desc">
@@ -556,7 +653,7 @@
         </div>
       </div>
 
-      <div class="hero-card reveal">
+      <div class="hero-card reveal hero-visual system-card lab-card">
         <div class="screen">
           <div class="screen-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
           <div class="dashboard">
@@ -956,6 +1053,15 @@
     document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
     setLanguage(initialLang);
+    const logViewport = () => {
+      console.log(
+        'window width', window.innerWidth,
+        'doc width', document.documentElement.scrollWidth,
+        'fit', document.documentElement.scrollWidth <= window.innerWidth
+      );
+    };
+    window.addEventListener('load', logViewport);
+    window.addEventListener('resize', logViewport);
   </script>
 </body>
 </html>
